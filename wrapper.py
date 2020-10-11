@@ -6,14 +6,19 @@ def getUserFriends(id): return requests.get("https://friends.roblox.com/v1/users
 def getUserFriendsCount(id): return requests.get("https://friends.roblox.com/v1/users/" + str(id) + "/friends/count").text
 def getUserFriendsOnline(id): return requests.get("https://friends.roblox.com/v1/users/" + str(id) + "/friends/online").text
 def getUserFollowedPlaces(id): return requests.get(" https://followings.roblox.com/v2/users/"+ str(id) + "/universes").text
-def getUserCollectibles(id): return requests.get("https://inventory.roblox.com/v1/users/" + str(id) + "//assets/collectibles").text
+def getUserCollectibles(id): return requests.get("https://inventory.roblox.com/v1/users/" + str(id) + "/assets/collectibles").text
 
 def friendRequestsDeclineAll(): return requests.post("https://friends.roblox.com/v1/user/friend-requests/decline-all")
 def friendRequestAccept(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "/friend-requests/accept-friend-request")
 def friendRequestDecline(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "/friend-requests/decline-friend-request")
 def friendUserUnfriend(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "/unfriend")
-
 def userFollow(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "/follow")
 def userUnFollow(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "/unfollow")
 def userRequestFriend(id): return requests.post("https://friends.roblox.com/v1/users/" + str(id) + "request-friendship")
 
+def getTradeInfo(tradeid): return requests.get("https://trades.roblox.com/v1/trades/" + str(tradeid))
+def CanTradeWith(uid): return requests.get("https://trades.roblox.com/v1/users/" + str(uid) + "/can-trade-with/")
+def TradeAccept(tradeid): return requests.get("https://trades.roblox.com/v1/trades/" + str(tradeid) + "/accept")
+def TradeCounter(tradeid): return requests.get("https://trades.roblox.com/v1/trades/" + str(tradeid) + "/counter")
+def TradeDecline(tradeid): return requests.get("https://trades.roblox.com/v1/trades/" + str(tradeid) + "/decline")
+def TradeSend(tradeid): return requests.get("https://trades.roblox.com/v1/trades/" + str(tradeid) + "/send")
